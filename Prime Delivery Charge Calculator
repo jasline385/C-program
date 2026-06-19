@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main() 
+{
+    int amount,prime_member_status,reduced,delivery_charge;
+    printf("Enter the amount: ");
+    scanf("%d", &amount);
+    printf("Is customer a prime Member : ");
+    scanf("%d", &prime_member_status);
+    if (amount >= 2000) 
+    {
+        printf("Free Delivery Charge for customers\n");
+        printf("Total Amount: %d\n", amount);
+    } 
+    else if (amount < 2000 && prime_member_status == 1)
+    {
+        reduced = amount + 75; 
+        printf("Delivery Fee is Reduced by 50%%\n");
+        printf("Total Amount: %d\n", reduced);
+    } 
+    else 
+    {
+        delivery_charge = amount + 150;
+        printf("Customer pays the amount along with Delivery Charge.\n");
+        printf("Total Amount: %d\n", delivery_charge);
+    }
+    return 0;
+}
