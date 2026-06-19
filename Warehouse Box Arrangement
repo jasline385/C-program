@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main() 
+{
+    int products,capacity,total_boxes;
+    printf("Enter the Total number of products arrived : ");
+    scanf("%d",&products);
+    printf("Number of product that a box holds : ");
+    scanf("%d",&capacity);
+    if(products == capacity)
+    {
+        printf("Only ONE Box is enough to store the Products in a Box");
+    }
+    else if(products > capacity)
+    {
+        printf("It needs more boxes to store the products : ");
+        total_boxes = (products + capacity - 1) / capacity;
+        printf("%d",total_boxes);
+    }
+    else
+    {
+        printf("product not arrived");
+    }
+}
+    
+
