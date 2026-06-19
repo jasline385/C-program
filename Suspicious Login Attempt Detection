@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main() 
+{
+    int attempt;
+    int  user_id;
+    int last_user = -1;
+    int count = 0;      
+    printf("How many login attempts: ");
+    scanf("%d", &attempt);
+    printf("Enter the %d user IDs :\n",attempt);
+    for (int i = 0; i < attempt; i++) 
+    {
+        scanf("%d", &user_id);
+        if (user_id == last_user) 
+        {
+            count++;
+        } else 
+        {
+            last_user = user_id;
+            count = 1;                
+        }
+        if (count > 3) 
+        {
+            printf("Suspicious activity detected for User %d\n",  user_id);
+            return 0; 
+        }
+    }
+    printf("No suspicious activity detected \n");
+    return 0;
+}
